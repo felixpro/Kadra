@@ -11,6 +11,7 @@ module App
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
     config.assets.initialize_on_precompile = false
+    config.action_controller.asset_host = 'http://' + Figaro.env.hostname
 
 
     # Settings in config/environments/* take precedence over those specified here.
