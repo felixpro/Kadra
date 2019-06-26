@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class AdminMailerTest < ActionMailer::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
-end
+  def new_user_waiting_for_approval_preview
+    AdminMailer.new_user_waiting_for_approval(User.first)
+ end
