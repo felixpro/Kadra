@@ -1,4 +1,10 @@
 Rails.application.configure do
+
+  config.action_mailer.default_url_options = { host: 'enigmatic-coast-52341.herokuapp.com' }
+
+  config.action_mailer.delivery_method = :smtp
+
+
   # Settings specified here will take precedence over those in config/application.rb.
   # Code is not reloaded between requests.
   config.cache_classes = true
@@ -109,5 +115,5 @@ Rails.application.configure do
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
 
-config.action_mailer.default_url_options = { host: 'enigmatic-coast-52341.herokuapp.com' }
+
 end
