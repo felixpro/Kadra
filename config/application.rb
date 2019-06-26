@@ -10,8 +10,7 @@ module App
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
-    config.assets.initialize_on_precompile = false
-    config.action_controller.asset_host = 'http://' + Figaro.env.hostname
+    config.cache_store = :redis_store, 'redis://localhost:6379/0/cache'
 
 
     # Settings in config/environments/* take precedence over those specified here.
