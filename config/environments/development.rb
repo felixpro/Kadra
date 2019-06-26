@@ -7,7 +7,6 @@ Rails.application.configure do
   # config.action_mailer.delivery_method = :mailjet
 
 
-
   config.action_mailer.delivery_method = :smtp
 
   # Do not eager load code on boot.
