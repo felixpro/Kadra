@@ -5,6 +5,16 @@
   margin: 0 !important;
 }
 
+.field_with_errors {
+  background: none;
+  padding: 0;
+}
+.field_with_errors input {
+  border-color: red !important;
+  background: none;
+  padding: 0;
+}
+
 .button_to_page {
   padding: 20px;
   background: red;
