@@ -9,7 +9,6 @@ Rails.application.configure do
 
 
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { host: "enigmatic-coast-52341.herokuapp.com" }
 
   # Do not eager load code on boot.
   config.eager_load = false
