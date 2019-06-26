@@ -1,0 +1,101 @@
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+  <body>
+
+
+        <% if notice %>
+      <p class="alert alert-success" style="text-align:center;"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger" style="text-align:center;"><%= alert %></p>
+    <% end %>
+
+
+
+    <div class="nav_header">
+      <%= image_tag("logo.png") %>
+
+      <% if user_signed_in? %>
+        <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "nav_log_link") %>
+      <% else %>
+        <%= link_to('Login', new_user_session_path, class: "nav_log_link") %>
+      <% end %>
+    </div>
+    <div class="singup_container">
+
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-7 sections ">
+
+            <div class="form_section">
+              <div class="content">
+                <div class="header_title">
+                  <h2>Log in section</h2>
+                  <p>
+                    Dolor isidor lorem ipsum alcalina silor lorem
+                    <br>
+                    ipsum salc sprestas lorem isidor!
+                  </p>
+                </div>
+                <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                <%= render "devise/shared/error_messages", resource: resource %>
+
+                    <div class="input_section">
+
+                      <div class="first_input_box">
+                        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email" %>
+                        </div>
+
+                        <div class="">
+                          <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password" %>
+                        </div>
+
+                      </div>
+                      <div class="actions buttons_sing">
+                        <%= f.submit "Log in", class: "submit" %>
+
+                        <% if devise_mapping.rememberable? %>
+                        <span class="checkbox">
+                          <%= f.check_box :remember_me %>
+                          <%= f.label :remember_me%>
+                        </span>
+
+                        <% end %>
+
+                      </div>
+                </div>
+
+
+
+
+            </div>
+
+            <% end %>
+
+          </div>
+
+          <div class="col-lg-5 sections">
+            <div class="image_container">
+              <%= image_tag("home_img.jpg") %>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

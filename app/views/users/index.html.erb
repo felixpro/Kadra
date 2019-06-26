@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+  <body>
+
+
+        <% if notice %>
+      <p class="alert alert-success" style="text-align:center;"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger" style="text-align:center;"><%= alert %></p>
+    <% end %>
+
+
+    <div class="nav_header_black">
+      <%= image_tag("white_logo.png") %>
+      <% if user_signed_in? %>
+        <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "nav_log_link") %>
+      <% else %>
+        <%= link_to('Login', new_user_session_path, class: "nav_log_link") %>
+      <% end %>
+    </div>
+    <div class="users_show_container">
+      <div class="header">
+        <h1 class="container">
+          Clients waiting for approval
+        </h1>
+      </div>
+
+      <div class="body_index">
+        <div class="container">
+          <table>
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Company Name</th>
+                  <th>Phone</th>
+                  <th>Companyaddress</th>
+                  <th>Adresschipping</th>
+                  <th>Tax ID</th>
+                  <th>Business type</th>
+                  <th colspan="3"></th>
+                </tr>
+              </thead>
+            <tbody>
+              <% @users.each do |user| %>
+              <% if user.approved == false %>
+              <tr>
+                <td><%= link_to 'GO TO CLIENT', edit_user_path(user), class: "show_link" %></td>
+                <td><%= user.name %></td>
+                <td><%= user.email %></td>
+                <td><%= user.companyName %></td>
+                <td><%= user.phone %></td>
+                <td><%= user.companyAddress %></td>
+                <td><%= user.adressChipping %></td>
+                <td><%= user.taxi %></td>
+                <td><%= user.business %></td>
+              </tr>
+                <% else%>
+
+              <% end %>
+
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

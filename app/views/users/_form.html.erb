@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+  <body>
+
+
+    <% if notice %>
+  <p class="alert alert-success" style="text-align:center;"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-danger" style="text-align:center;"><%= alert %></p>
+<% end %>
+
+
+
+
+    <%= form_with(model: user, local: true) do |form| %>
+      <% if user.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+          <ul>
+            <% user.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+    <div class="nav_header_black ">
+      <%= image_tag("white_logo.png") %>
+      <% if user_signed_in? %>
+        <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "nav_log_link") %>
+      <% else %>
+        <%= link_to('Login', new_user_session_path, class: "nav_log_link") %>
+      <% end %>
+    </div>
+
+
+
+
+    <div class="users_show_edit">
+      <div class="header">
+        <h1 class="container">
+          <%= form.text_field :name %>
+        </h1>
+      </div>
+
+      <div class="body_index">
+
+        <div class="container">
+          <div class="row border_row">
+            <div class="col-lg-3">
+              <p>Name</p>
+              <%= form.text_field :name %>
+            </div>
+            <div class="col-lg-3">
+              <p>Email</p>
+              <%= form.text_field :email %>
+            </div>
+            <div class="col-lg-3">
+              <p>Company Name</p>
+              <%= form.text_field :companyName %>
+            </div>
+            <div class="col-lg-3">
+              <p>Phone</p>
+              <%= form.text_field :phone %>
+            </div>
+          </div>
+          <div class="row second_row">
+            <div class="col-lg-3">
+              <p>Company address</p>
+              <%= form.text_field :companyAddress %>
+            </div>
+            <div class="col-lg-3">
+              <p>Company Billing Address</p>
+              <%= form.text_field :adressChipping %>
+            </div>
+            <div class="col-lg-3">
+                <p>Tax ID</p>
+              <%= form.text_field :taxi %>
+            </div>
+            <div class="col-lg-3 ">
+              <p>Business type</p>
+              <%= form.text_field :business %>
+            </div>
+          </div>
+          <div class="actions">
+          </div>
+          <div class="edit_buttons">
+          <%= form.radio_button :approved, true, class: "input" %>
+          <%= form.label :approved, "Aprove", :value => "true", class: "radio_text"  %>
+
+          <%= form.submit "Update User", class: "update" %>
+          <%= link_to 'Decline', user, method: :delete, data: { confirm: 'Are you sure?' }, class: "decline" %>
+        </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+
+  </body>
+</html>
