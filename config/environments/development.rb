@@ -13,14 +13,7 @@ Rails.application.configure do
     # Override Action Mailer's 'silent errors' in development
     config.action_mailer.raise_delivery_errors = true
 
-    config.action_mailer.smtp_settings = {
-      address:              'smtp.gmail.com',
-      port:                 587,
-      domain:               'example.com',
-      user_name:            '<username>',
-      password:             '<password>',
-      authentication:       'plain',
-      enable_starttls_auto: true }
+
 
   config.cache_classes = false
 
