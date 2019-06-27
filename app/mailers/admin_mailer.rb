@@ -1,5 +1,5 @@
 class AdminMailer < ApplicationMailer
-  default from: 'felixpujols007@gmail.com'
+  default from: 'kandra.contacts@gmail.com'
 
       def new_user_waiting_for_approval(email)
            @email = email
