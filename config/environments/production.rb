@@ -11,17 +11,18 @@ Rails.application.configure do
 
 
   config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
 
 
-  ActionMailer::Base.smtp_settings = {
-  :user_name => 'app137876842@heroku.com',
-  :password => 'o15mjttr2248',
-  :domain => 'enigmatic-coast-52341.herokuapp.com',
-  :address => 'smtp.sendgrid.net',
-  :port => 587,
-  :authentication => :plain,
-  :enable_starttls_auto => true
-}
+#   ActionMailer::Base.smtp_settings = {
+#   :user_name => 'app137876842@heroku.com',
+#   :password => 'o15mjttr2248',
+#   :domain => 'enigmatic-coast-52341.herokuapp.com',
+#   :address => 'smtp.sendgrid.net',
+#   :port => 587,
+#   :authentication => :plain,
+#   :enable_starttls_auto => true
+# }
 
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
