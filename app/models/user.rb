@@ -5,15 +5,16 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
 
-  # after_create :send_admin_mail
-  # def send_admin_mail
-  #   AdminMailer.new_user_waiting_for_approval(email).deliver_now
-  # end
+
 
   def active_for_authentication?
     super && approved?
 end
 
+after_create :send_admin_mail
+ def send_admin_mail
+   AdminMailer.new_user_waiting_for_approval(email).deliver_now
+ end
 
 
 end
