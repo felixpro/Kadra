@@ -18,6 +18,8 @@ class UsersController < ApplicationController
 
     else
       render 'page'
+      # render :template => "layouts/index"
+
     end
   end
 
