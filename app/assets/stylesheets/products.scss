@@ -1,0 +1,31 @@
+// Place all the styles related to the products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.index {
+  .index_nav1 {
+    background: #1a1a1a;
+    padding: 5px 270px;
+    .navbar-brand {
+
+    }
+    .collapse {
+      justify-content: flex-end;
+      ul {
+        .vertical {
+          color: #737373;
+          height: 35px;
+          display: flex;
+          align-items: center;
+        }
+        li {
+          a {
+            color: #737373;
+          }
+        }
+      }
+    }
+  }
+
+}
+// Products index

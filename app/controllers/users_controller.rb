@@ -17,8 +17,7 @@ class UsersController < ApplicationController
     if current_user.admin?
 
     else
-      render 'page'
-      # render :template => "layouts/index"
+       # render :template => "products/index"
 
     end
   end

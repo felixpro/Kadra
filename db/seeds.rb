@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+
+
+
+Product.create(sku:"CC-7", upc:"687097111002", description: "Strauss Le Cuivre - Copper Cookware Set", design:"", size:7, pack:1, price:254 );
