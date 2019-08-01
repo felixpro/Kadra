@@ -69,3 +69,5 @@ gem 'devise'
 gem 'cancancan', '~> 1.10'
 
 gem 'mailjet'
+
+gem 'jquery-rails'

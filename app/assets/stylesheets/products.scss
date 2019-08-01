@@ -2,10 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+
 .index {
   .index_nav1 {
-    background: #1a1a1a;
+    background: #000000;
     padding: 5px 270px;
+    margin-bottom: 50px;
     .navbar-brand {
 
     }
@@ -26,6 +29,156 @@
       }
     }
   }
+.second_nav {
+  justify-content: center;
+  display: flex;
+  padding: 0;
+  background: #000000;
+  margin-bottom: 50px;
+  .navbar-collapse {
+    justify-content: center;
+    display: flex;
+    .navbar-nav {
+      a {
+        color:#ffff;
+        padding: 15px 15px;
+        border-right: 1px solid #bfbfbf;
+        border-left: 1px solid #bfbfbf;
+        &:active,
+        &:focus,
+        &:hover,
+        &:visited {
+          box-shadow: none;
+          background: none;
+          text-decoration: none;
+        }
+      }
+    }
+  }
 
 }
+}
 // Products index
+
+.section_product {
+  .row {
+    .col-3 {
+      padding-bottom: 30px;    }
+  }
+  .product_container {
+    border: 2px solid #d9d9d9;
+    padding: 15px;
+
+    .header_product {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 20px;
+      p {
+        font-weight: bold;
+        margin: 0;
+      }
+      button {
+        background: #990000;
+        color:#ffff;
+        border-radius: 5px;
+        font-size: 14px;
+        padding: 4px 8px
+      }
+    }
+    .product_image {
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      background: red;
+      width: 100%;
+      height: 140px;
+    }
+  }
+  .bottom_section {
+    .description {
+      p.text_desc {
+        color:  #333333;
+        font-weight: bold;
+        margin-bottom: 8px;
+      }
+      p.size {
+        color:  #bfbfbf;
+        font-weight: bold;
+      }
+    }
+    .price {
+      display: flex;
+      justify-content: space-between;
+      h1 {
+        font-size: 22px;
+        font-weight: bold;
+      }
+      a {
+        font-size: 14px;
+        margin: 0;
+        align-self: center;
+        text-decoration: underline;
+        border: none;
+        color: #808080;
+        &:active,
+        &:focus,
+        &:hover,
+        &:visited {
+          color: #808080;
+          box-shadow: none;
+          border: none;
+          background: none;
+          text-decoration: underline;
+
+        }
+      }
+    }
+    .product_status {
+      p {
+        color: #808080;
+        font-weight: 500;
+        font-size: 14px;
+        span {
+          color:#000000 !important;
+        }
+      }
+    }
+    .product_request {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      [type="submit"]{
+        background: #8c8c8c;
+        padding: 5px 10px;
+        color: #ffffff;
+        font-size: 14px;
+      }
+    }
+    .view_more {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 20px;
+      a {
+        color: #808080;
+        border-bottom: 1px solid #bfbfbf;
+        &:active,
+        &:focus,
+        &:hover,
+        &:visited {
+          color: #808080;
+          box-shadow: none;
+          background: none;
+          text-decoration: none;
+
+        }
+      }
+    }
+  }
+  }
+}
+
+// section_product

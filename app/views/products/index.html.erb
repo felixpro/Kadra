@@ -17,6 +17,8 @@
   <body>
     <%= yield %>
 
+
+
     <section class="index">
       <nav class="navbar navbar-expand-lg navbar-light  index_nav1">
         <a class="navbar-brand" href="#"> <%= image_tag("white_logo.png")%> </a>
@@ -44,45 +46,80 @@
         </div>
       </nav>
 
-      <p id="notice"><%= notice %></p>
+      <nav class="navbar navbar-expand-lg navbar-light  second_nav">
 
-      <h1>Products</h1>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link " href="#">Bar </a>
+            <a class="nav-item nav-link" href="#">Houseware/Hardware Retail</a>
+            <a class="nav-item nav-link" href="#">Cafeters</a>
+            <a class="nav-item nav-link" href="#">Restaurants</a>
+            <a class="nav-item nav-link" href="#">Gift Store</a>
+            <a class="nav-item nav-link" href="#">Bakery</a>
+            <a class="nav-item nav-link" href="#">Event Planners</a>
+            <a class="nav-item nav-link" href="#">In order of catalog</a>
+          </div>
+        </div>
+      </nav>
 
-      <table>
-        <thead>
-          <tr>
-            <th>Sku</th>
-            <th>Upc</th>
-            <th>Description</th>
-            <th>Design</th>
-            <th>Size</th>
-            <th>Pack</th>
-            <th>Price</th>
-            <th colspan="3"></th>
-          </tr>
-        </thead>
 
-        <tbody>
-          <% @products.each do |product| %>
 
-            <tr>
-              <td><%= button_to "Add to cart", line_items_path(:product_id => product.id)%></td>
-              <td><%= product.sku %></td>
-              <td><%= product.upc %></td>
-              <td><%= product.description %></td>
-              <td><%= product.design %></td>
-              <td><%= product.size %></td>
-              <td><%= product.pack %></td>
-              <td><%= product.price %></td>
+
+      <div class="section_product">
+        <div class="container">
+          <div class="row">
+            <% @products.each do |product| %>
+            <div class="col-3">
+              <div class="product_container">
+                <div class="header_product">
+                  <p class="sku"><%= product.sku %></p>
+                  <button type="button" name="button">BUY 12 SAVE 20%</button>
+                </div>
+                <div class="product_image">
+                  <%= image_tag(product.design)%>
+                </div>
+                <div class="bottom_section">
+                  <div class="description">
+                    <p class="text_desc"><%= product.description %></p>
+                    <p class="size"><%= product.size %>, Color, PC</p>
+                  </div>
+                  <div class="price">
+                    <h1>$<%= product.price %></h1>
+                    <%= link_to 'QUICK VIEW'%>
+                  </div>
+                  <div class="product_status">
+                    <p> <span>Out of stock!</span>  Coming on March</p>
+                  </div>
+                  <div class="product_request">
+
+                    <input placeholder="Enter a number" required type="number" value="" min="-100" max="100"/>
+
+                    <%= button_to "Add to cart", line_items_path(:product_id => product.id)%>
+                  </div>
+                  <div class="view_more">
+                    <%= link_to 'More info'%>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- <tr>
               <td><%= link_to 'Show', product %></td>
               <td><%= link_to 'Edit', edit_product_path(product) %></td>
               <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
+            </tr> -->
 
-      <br>
+              <% end %>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
 
       <%= link_to 'New Product', new_product_path %>
 
@@ -91,6 +128,10 @@
         <button type="button" name="button">Logout</button>
       <% end %>
     </section>
+
+
+    <script src="js/bootstrap-input-spinner.js"></script>
+    <p id="notice"><%= notice %></p>
 
   </body>
 </html>
