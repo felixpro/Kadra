@@ -9,8 +9,8 @@
 
 
 User.create(name: "Jhon M.", password: "123456",password_confirmation:"123456", admin:true, email: "felix@gmail.com", approved: true)
-User.create(name: "Jhon M.", password: "123456",password_confirmation:"123456", admin:true, email: "moshe@kadrakitchenware.com", approved: false)
-User.create(name: "Jhon M.", password: "123456",password_confirmation:"123456", admin:true, email: "joseph@kadrakitchenware.com", approved: false)
+User.create(name: "Jhon M.", password: "123456",password_confirmation:"123456", admin:true, email: "moshe@kadrakitchenware.com", approved: true)
+User.create(name: "Jhon M.", password: "123456",password_confirmation:"123456", admin:true, email: "joseph@kadrakitchenware.com", approved: true)
 
 Product.create(sku:"CC-7", upc:"687097111002", description: "Strauss Le Cuivre - Copper Cookware Set", design:"https://cdn.shopify.com/s/files/1/1768/3507/products/KB32L-R2_300x300.jpg?v=1531243359", size:7, pack:1, price:254 );
 Product.create(sku:"JSM-8", upc:"687097111002", description: "Joseph Strauss Integral 3 18/10 SS Cookware Set", design:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXbMYtHQJPPg0R5Gq36VvAJk-_DA_lOoPkF8IcwHnUrRZVk34", size:7, pack:1, price:254 );
